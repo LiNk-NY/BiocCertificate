@@ -40,10 +40,6 @@ appCSS <- paste(
 #'   html
 #' @export
 BiocCertificate <- function(...) {
-    options(
-        shiny.host = "127.0.0.1",
-        shiny.port = 8080
-    )
     fieldsAll <- c("eid", "ename", "fullname", "address")
     ui <- fluidPage(
         shinyjs::useShinyjs(),
@@ -191,19 +187,12 @@ BiocCertificate <- function(...) {
             })
         })
         output$pdfviewer <- renderText({
-            local <- paste0(
-                "http://", getOption("shiny.host"),
-                ":", getOption("shiny.port"), "/"
-            )
-            cert_file <- paste0(
-                local,
-                certificate(
-                    template = input$template,
-                    .data = formData(),
-                    file =  paste0(
-                        gsub("\\s+", "_", input$fullname),
-                        "_", input$eid, "_", input$template, ".pdf"
-                    )
+            cert_file <- certificate(
+                template = input$template,
+                .data = formData(),
+                file =  paste0(
+                    gsub("\\s+", "_", input$fullname),
+                    "_", input$eid, "_", input$template, ".pdf"
                 )
             )
             message(cert_file)

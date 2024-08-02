@@ -27,25 +27,27 @@ papersize: letter
 
 \opening{To Whom It May Concern:}
 
-On behalf of the Organizing Committee for
-
-{\it {{ename}} \\[.25cm]}
+On behalf of the Organizing Committee for \textit{ {{ename}} } held at the\\
+\begin{center}
 {{elocation}}
+\end{center}
 
 We would like to thank you for your participation.
-This letter certifies that {{fullname}}
+This letter certifies that \underline{ {{fullname}} }
 was a participant at {{ename}}.
 
 Please visit {{eurl}} for additional conference information.
 
 \begin{flushright}
 Sincerely,\\[.025cm]
-%% \includegraphics[width=3cm]{signature.png}\\[.025cm]
-Name Surname
 \end{flushright}
 
-\begin{flushleft}
-\includegraphics[height=4cm]{ {{esticker}} }
-\end{flushleft}
+\includegraphics[height=3cm,width=3cm,keepaspectratio]{ {{esticker}} }
+\hfill
+\includegraphics[height=3cm,width=3cm,keepaspectratio]{ {{biocseal}} }\\[.025cm]
+
+\begin{flushright}
+The Bioconductor Project
+\end{flushright}
 
 \end{letter}

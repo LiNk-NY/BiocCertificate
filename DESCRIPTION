@@ -2,7 +2,7 @@ Package: BiocCertificate
 Title: Generate Conference Certificates
 Version: 0.99.4
 Authors@R: person(
-    "Marcel", "Ramos", , "marcel.ramos@roswellpark.org",
+    "Marcel", "Ramos", , "marcel.ramos@sph.cuny.edu",
     c("aut", "cre"), c(ORCID = "0000-0002-3242-0582")
     )
 Description: A shiny app to generate conference certificates and letters from

@@ -1,8 +1,8 @@
 Package: BiocCertificate
 Title: Generate Conference Certificates
-Version: 0.99.4
+Version: 0.99.5
 Authors@R: person(
-    "Marcel", "Ramos", , "marcel.ramos@roswellpark.org",
+    "Marcel", "Ramos", , "marcel.ramos@sph.cuny.edu",
     c("aut", "cre"), c(ORCID = "0000-0002-3242-0582")
     )
 Description: A shiny app to generate conference certificates and letters from
@@ -24,4 +24,4 @@ License: Artistic-2.0
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
-Date: 2024-09-16
+Date: 2024-08-02

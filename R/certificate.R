@@ -33,7 +33,11 @@ templatePath <- function(file = c("certificate", "letter")) {
         "images", "bioconductor_logo_rgb.png",
         package = "BiocCertificate", mustWork = TRUE
     )
-    cbind.data.frame(.data, edf, bioclogo = elogo)
+    biocseal <- system.file(
+        "images", "Bioconductor.png",
+        package = "BiocCertificate", mustWork = TRUE
+    )
+    cbind.data.frame(.data, edf, bioclogo = elogo, biocseal = biocseal)
 }
 
 .preprocessData <- function(.data) {

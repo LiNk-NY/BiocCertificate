@@ -4,16 +4,24 @@
 #     fullname = "Marcel Ramos Pérez"
 # )
 
-eventData <- function(eid) {
+.readYmlConfig <- function() {
     edata <- system.file(
         "resources", "events.yml",
         package = "BiocCertificate", mustWork = TRUE
     )
-    edata <- yaml::read_yaml(edata)
+    yaml::read_yaml(edata)
+}
+
+.filterCheckEID <- function(edata, eid) {
     eid <- tolower(eid)
     if (!eid %in% names(edata[["events"]]))
         stop("Event ID not supported; contact organizers")
-    edata <- as.data.frame(edata[["events"]][[eid]])
+    as.data.frame(edata[["events"]][[eid]])
+}
+
+eventData <- function(eid) {
+    edata <- .readYmlConfig()
+    edata <- .filterCheckEID(edata, eid)
     edata[["esticker"]] <- .cache_url_file(edata[["stickerdl"]])
     edata
 }
@@ -41,6 +49,12 @@ eventData <- function(eid) {
     bfcrpath(
         bfc, rnames = url, exact = TRUE, download = TRUE, rtype = "web"
     )
+}
+
+.getEname <- function(key) {
+    edata <- .readYmlConfig()
+    edata <- .filterCheckEID(edata, key)
+    edata[["ename"]]
 }
 
 .genEurl <- function(key) {

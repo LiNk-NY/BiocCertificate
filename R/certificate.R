@@ -1,9 +1,10 @@
-templatePath <- function(file = c("certificate", "letter")) {
+templatePath <- function(file = c("certificate", "letter", "workshop")) {
     file <- match.arg(file)
     filename <- switch(
         file,
         certificate = "CertificateTemplate.txt",
-        letter = "LetterTemplate.txt"
+        letter = "LetterTemplate.txt",
+        workshop = "WorkshopTemplate.txt"
     )
     system.file(
         "resources", filename, package = "BiocCertificate", mustWork = TRUE

@@ -62,7 +62,7 @@ BiocCertificate <- function(...) {
                         id = "template",
                         radioButtons(
                             "template", "Select format",
-                            c("certificate", "letter"), "certificate"
+                            c("certificate", "letter", "workshop"), "certificate"
                         )
                     ),
                     div(
@@ -91,7 +91,7 @@ BiocCertificate <- function(...) {
                         ),
                         textAreaInput(
                             "address",
-                            "Mailing address",
+                            "Mailing address (letter format only)",
                             height = "100px",
                             placeholder = paste0(
                                 "123 Fake St.\nSpringfield",
@@ -139,12 +139,12 @@ BiocCertificate <- function(...) {
     server <- function(input, output, session) {
         observeEvent(input$presubmit, {
             eid <- input[["eid"]]
-            ename <- gsub("bioc", "Bioconductor ", eid, ignore.case = TRUE)
-            ename <- gsub("euro", "European ", ename, ignore.case = TRUE)
-            ename <- gsub("asia", "Asia ", ename, ignore.case = TRUE)
+            ename <- .getEname(eid)
             updateTextInput(session, "ename", value = ename)
-            eurl <- .genEurl(eid)
-            updateTextInput(session, "eurl", value = eurl)
+            if (!identical(input[["template"]], "workshop")) {
+                eurl <- .genEurl(eid)
+                updateTextInput(session, "eurl", value = eurl)
+            }
             disable(id = "presubmit")
         })
         observe({

@@ -1,0 +1,33 @@
+---
+title: ''
+output: pdf_document
+classoption: landscape
+header-includes:
+- \renewcommand{\familydefault}{\sfdefault}
+---
+
+\pagenumbering{gobble}
+
+\begin{center}
+  {\sc \Huge  \textbf{Certificate of Workshop Completion} } \\
+  \vfill
+  {\sc \Large Awarded to}
+  \vfill
+  {\Huge \textbf{ {{fullname}} }} \\
+  \vfill
+  {\sc \Large For participation in}
+  \vfill
+  {\Huge \textit{ {{ename}} } }
+  \bigskip \\
+  {\Large \textit{  {{edate}} } }
+  \bigskip \\
+  {\Large \textit{  {{elocation}} } }\\
+\end{center}
+
+\vfill
+
+\begin{center}
+\includegraphics[height=4cm]{ {{bioclogo}} }
+\hfill
+\includegraphics[height=6cm]{ {{esticker}} }
+\end{center}

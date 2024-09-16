@@ -1,4 +1,9 @@
 events:
+  eurobioc2024:
+    edate: September 4 - 6, 2024
+    elocation: "Department of Statistics, University of Oxford\\\\[.25cm] Oxford, United Kingdom"
+    eurl: https://eurobioc2024.bioconductor.org
+    stickerdl: https://raw.githubusercontent.com/Bioconductor/BiocStickers/devel/events/EuroBioc2024/EuroBioC2024.png
   bioc2024:
     edate: July 24 - 26, 2024
     elocation: "Van Andel Institute\\\\[.25cm] Grand Rapids, MI, United States"
